@@ -55,7 +55,7 @@ export default function Page1() {
   const dispatch = useDispatch()
 
   const handleDelete = (id) => {
-      axios.delete('http://localhost:3001/deleteuser/'+id)
+      axios.delete('https://user-management-mongo-db.vercel.app/deleteuser/'+id)
       .then(res => {
           dispatch(deleteUser({id}))
       }).catch(err => console.log(err))

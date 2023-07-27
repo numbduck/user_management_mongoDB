@@ -7,6 +7,14 @@ const mongoose = require("mongoose")
 app.use(cors());
 app.use(express.json());
 
+app.use(cors(
+  {
+    origin : ["https://user-management-mongo-db.vercel.app/"],
+    methods :["POST", "GET", "DELETE", "PUT"],
+    credentials : true
+  }
+))
+
 mongoose.connect("mongodb+srv://adityagreen:3zIYi9sYmrS5IWG1@cluster0.ynhw5pu.mongodb.net/users_db",{useNewUrlParser: true, useUnifiedTopology:true, dbName:'users_db'});
 
 

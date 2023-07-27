@@ -26,7 +26,7 @@ const Page2 = () => {
   // }
   const handleClick = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/create', {id, name, email, phone})
+    axios.post('https://user-management-mongo-db.vercel.app/create', {id, name, email, phone})
     .then(res => {
         dispatch(addUser(res.data))
         navigate('/')

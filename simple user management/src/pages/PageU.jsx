@@ -35,7 +35,7 @@ const [phone, setPhone]= useState(existingUser.phone)
 
   const handleUpdate = (e) => {
     e.preventDefault()
-    axios.put('http://localhost:3001/update/'+id, {name, email, phone})
+    axios.put('https://user-management-mongo-db.vercel.app/update/'+id, {name, email, phone})
     .then(res => {
         dispatch(updateUser({id, name, email, phone}))
         navigate('/')
